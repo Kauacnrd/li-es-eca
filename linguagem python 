@@ -1,0 +1,27 @@
+class AnimalEstimacao:
+    def __init__(self):
+        self.nome = ''
+        self.raca = ''
+        self.idade = 0
+        self.nome_responsavel = ''
+        self.telefone_responsavel = ''
+
+    def cadastrar_animal(self):
+        self.nome = input("Digite o nome do animal: ")
+        self.raca = input("Digite a raça do animal: ")
+        self.idade = int(input("Digite a idade do animal: "))
+        self.nome_responsavel = input("Digite o nome do responsável: ")
+        self.telefone_responsavel = input("Digite o telefone do responsável: ")
+
+    def retornar_cadastro(self):
+        return f"Cadastro do animal:\nNome: {self.nome}\nRaça: {self.raca}\nIdade: {self.idade}\n" \
+               f"Responsável: {self.nome_responsavel}\nTelefone: {self.telefone_responsavel}"
+
+# Criando uma instância da classe AnimalEstimacao
+animal = AnimalEstimacao()
+
+# Preenchendo o cadastro do animal
+animal.cadastrar_animal()
+
+# Retornando o cadastro do animal
+print(animal.retornar_cadastro())
