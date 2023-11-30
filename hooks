@@ -1,0 +1,18 @@
+import React, { useState } from 'react';
+
+function Contador() {
+  const [valor, setValor] = useState(0); // Definição do estado com valor inicial 0
+
+  const aumentarValor = () => {
+    setValor(valor + 1); // Função que aumenta o valor ao ser chamada
+  };
+
+  return (
+    <div>
+      <h1>Valor: {valor}</h1>
+      <button onClick={aumentarValor}>Aumentar</button>
+    </div>
+  );
+}
+
+export default Contador;
