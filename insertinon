@@ -1,0 +1,27 @@
+import random
+
+def insertion_sort(arr):
+    # Percorre todos os elementos do vetor a partir do segundo elemento
+    for i in range(1, len(arr)):
+        key = arr[i]  # Armazena o elemento atual a ser comparado
+        j = i - 1
+        
+        # Move os elementos do arr[0...i-1] que são maiores que a chave para uma posição à frente de sua posição atual
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+
+# Gerando um vetor de tamanho 30 com números ímpares aleatórios
+tamanho_vetor = 30
+vetor = random.sample(range(1, 100), tamanho_vetor)  # Gera números ímpares de 1 a 100
+vetor_impares = [num for num in vetor if num % 2 != 0]  # Filtra os números ímpares
+
+# Imprimindo o vetor antes da ordenação
+print("Vetor original:", vetor_impares)
+
+# Chamando a função de ordenação Insertion Sort
+insertion_sort(vetor_impares)
+
+# Imprimindo o vetor ordenado
+print("Vetor ordenado:", vetor_impares)
