@@ -1,0 +1,26 @@
+import React from 'react';
+
+// Definição de um componente que recebe props
+function MeuComponente(props) {
+  return (
+    <div>
+      <h1>Componente com Props</h1>
+      <p>Valor da prop: {props.valor}</p>
+    </div>
+  );
+}
+
+export default MeuComponente;
+import React from 'react';
+import MeuComponente from './MeuComponente'; // Importe o componente
+
+function App() {
+  return (
+    <div className="App">
+      {/* Renderize o componente MeuComponente e passe uma propriedade "valor" */}
+      <MeuComponente valor="Exemplo de Prop" />
+    </div>
+  );
+}
+
+export default App;
