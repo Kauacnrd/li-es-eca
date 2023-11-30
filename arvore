@@ -1,0 +1,79 @@
+class Node:
+    def __init__(self, key):
+        self.left = None
+        self.right = None
+        self.val = key
+
+def insert(root, key):
+    if root is None:
+        return Node(key)
+    else:
+        if root.val < key:
+            root.right = insert(root.right, key)
+        else:
+            root.left = insert(root.left, key)
+    return root
+
+def minValueNode(node):
+    current = node
+    while current.left is not None:
+        current = current.left
+    return current
+
+def deleteNode(root, key):
+    if root is None:
+        return root
+    if key < root.val:
+        root.left = deleteNode(root.left, key)
+    elif key > root.val:
+        root.right = deleteNode(root.right, key)
+    else:
+        if root.left is None:
+            temp = root.right
+            root = None
+            return temp
+        elif root.right is None:
+            temp = root.left
+            root = None
+            return temp
+        temp = minValueNode(root.right)
+        root.val = temp.val
+        root.right = deleteNode(root.right, temp.val)
+    return root
+
+def inorder(root):
+    if root:
+        inorder(root.left)
+        print(root.val, end=" ")
+        inorder(root.right)
+
+# Lista1
+lista1 = [45, 20, 30, 60, 81, 97, 100, 7, 8, 4]
+root1 = None
+for val in lista1:
+    root1 = insert(root1, val)
+
+print("Árvore BST a partir da Lista1:")
+inorder(root1)
+print("\nRemovendo 20 da árvore BST:")
+root1 = deleteNode(root1, 20)
+inorder(root1)
+print("\nRemovendo 60 da árvore BST:")
+root1 = deleteNode(root1, 60)
+inorder(root1)
+print("\n\n")
+
+# Lista2
+lista2 = [15, 6, 18, 3, 7, 16, 20, 4]
+root2 = None
+for val in lista2:
+    root2 = insert(root2, val)
+
+print("Árvore BST a partir da Lista2:")
+inorder(root2)
+print("\nRemovendo 18 da árvore BST:")
+root2 = deleteNode(root2, 18)
+inorder(root2)
+print("\nRemovendo 6 da árvore BST:")
+root2 = deleteNode(root2, 6)
+inorder(root2)
