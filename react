@@ -1,0 +1,29 @@
+
+
+Passo 1: Verifique se você tem o Node.js instalado. Você pode verificar digitando `node -v` no seu terminal. Se não estiver instalado, faça o download e instale a versão mais recente do Node.js no site oficial.
+
+Passo 2: Abra o terminal e navegue até o diretório onde deseja criar o projeto React.
+
+Passo 3: Execute o seguinte comando para criar um novo projeto React:
+
+```
+npx create-react-app meu-projeto
+```
+
+Isso criará uma nova pasta chamada "meu-projeto" com a estrutura básica de um projeto React.
+
+Passo 4: Após a conclusão da instalação, navegue até a pasta do projeto:
+
+```
+cd meu-projeto
+```
+
+Passo 5: Agora, você pode iniciar o servidor de desenvolvimento executando o comando:
+
+```
+npm start
+```
+
+Isso iniciará o servidor de desenvolvimento e abrirá automaticamente seu aplicativo React em seu navegador padrão.
+
+Passo 6: Agora você pode começar a editar seu aplicativo React abrindo o arquivo `src/App.js` em um editor de código de sua preferência.
